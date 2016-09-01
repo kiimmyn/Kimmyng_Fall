@@ -1,0 +1,14 @@
+
+public class Calculate {
+	public static int square(int number){
+		System.out.println (square);
+		int answer;
+		answer=number*number; 
+		return(answer);
+	
+	}
+}	
+
+		
+	
+	

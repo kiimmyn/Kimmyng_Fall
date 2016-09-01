@@ -8,3 +8,9 @@ public class Pokemon {
 	System.out.println ("\t\tz(_(\")(\")");
 	}
 }
+
+public class math {
+	public static void main (String[] args){
+	System.out.println (Square (5));
+	}
+}
