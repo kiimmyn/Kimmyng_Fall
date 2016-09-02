@@ -38,14 +38,9 @@ public class Calculate {
 	return(answer);
 
 	}
-
-
-	public static double toRadians(double degrees){
-	double answer;
-	answer=(3.14159/180);
-	return(answer);
-	}
 }
+
+
 
 	
 	
