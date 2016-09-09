@@ -47,5 +47,8 @@ public class Calculate {
 	}
 }
 
-	
+	public static double discriminant(double num1, double num2, double num3){
+	return ((num2*num2-4* num1*num3));
+	}
+			
 	
