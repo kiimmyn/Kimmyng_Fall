@@ -41,19 +41,14 @@ public class Calculate {
 
 
 	public static double toRadians(double degrees){
-		double answer;
-		answer=(3.14159/180);
-		return(answer);
+	double answer;
+	answer=(3.14159/180);
+	return(answer);
 	}
-
+}
 
 	public static double discriminant(double num1, double num2, double num3){
-		return ((num2*num2-4* num1*num3));
-	}
-	
-	public static double toImproperFrac(int number1 , int number2, int number3){
-		int fraction= (int number1* int number3+ int number2);
-		return(int fraction "/" int number3);
+	return ((num2*num2-4* num1*num3));
 	}
 			
 	

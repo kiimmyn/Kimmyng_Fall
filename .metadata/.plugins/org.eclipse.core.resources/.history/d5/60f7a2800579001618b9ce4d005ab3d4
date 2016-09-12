@@ -51,9 +51,6 @@ public class Calculate {
 		return ((num2*num2-4* num1*num3));
 	}
 	
-	public static double toImproperFrac(int number1 , int number2, int number3){
-		int fraction= (int number1* int number3+ int number2);
-		return(int fraction "/" int number3);
-	}
+	public static double toImproperFrac
 			
 	
