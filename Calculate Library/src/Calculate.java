@@ -39,7 +39,6 @@ public class Calculate {
 
 	}
 
-
 	public static double toRadians(double degrees){
 		double answer;
 		answer=(3.14159/180);
@@ -51,9 +50,11 @@ public class Calculate {
 		return ((num2*num2-4* num1*num3));
 	}
 	
-	public static double toImproperFrac(int number1 , int number2, int number3){
-		int fraction= (int number1* int number3+ int number2);
-		return(int fraction "/" int number3);
+	public static String toImproperFrac(int number1, int number2,int number3){
+		int fraction= (number1* number3+ number2);
+		return(fraction +"/"+  number3);
 	}
+
+	public static String toMixedNum(int fraction, int number2, int number3)
 			
 	
