@@ -50,11 +50,97 @@ public class Calculate {
 		return ((num2*num2-4* num1*num3));
 	}
 	
-	public static String toImproperFrac(int number1, int number2,int number3){
-		int fraction= (number1* number3+ number2);
-		return(fraction +"/"+  number3);
+	public static String toImproperFrac( int wholenum, int numerator, int denominator, int improperNum){
+		 improperNum= denominator * wholenum+ numerator;
+		return(wholenum +"/"+  denominator);
 	}
 
-	public static String toMixedNum(int fraction, int number2, int number3)
+	public static String toMixedNum(int a, int b){
+		String answer= ((a/b)/b);
+		return (answer);
+	}
+	
+	public static String foil (int a, int b, int c, int d, String e) {
+		return (a*c + "x^2" + a*d + b*c+ "x" + b*d);
+		}
+	
+	public static boolean inDivisbleby (int a, int b) {
+		if (a % b == 0 || b % a == 0) { 
+			return (true);
+		}else{
+			return(false); }
+	}
+	
+	
+	public static double absValue (double a){
+	if (a>0){
+	return a;
+	}else return (a*-1);
+	}
+	
+	public static int max (int a, int b){
+		if (a>b){
+		return a;
+	}else if (b>a){
+			return b;
+		}
+	}
+	
+	
+	public static double max(double a, double b ){
+		if (a>b){
+		return a;
+		}else{
+		return b;
+			}
+		}
+	
+	public static int min( int a, int b){
+		if (a<b){
+			return a;
+		}else if (b<a){
+			return b;
+		}
+	}
+	
+	public static double round2 (double a){
+		double answer;
+		double intnumber=(int)(a*100);
+		answer *=a;
+		return answer;
+	}
+	
+	
+	public static double exponent(int base, double power){
+		if (power<0){
+			throw new IllegalArgumentException("Power must be positive");
+		}
+		double answer= 1.0;
+		if (power == 0){
+			return(1);
+		}
+			for (int x=1; x<= power; x++){
+				answer *=base;
+		
+				}
+			}
+			
+			public static int factorial (int pos){
+				if (pos<0){
+						throw new IllegalArgumentException("Number for factorial must be positive.");
+					}
+				int answer=1;
+				if (pos==0){
+					return(1);
+				}
+				for(int i=1; i<= pos; i++){
+					answer *=i;
+				}
+				return answer;
+			}
+	}
+	
+	
+
 			
 	
