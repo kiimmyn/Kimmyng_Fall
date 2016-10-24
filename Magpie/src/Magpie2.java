@@ -20,11 +20,19 @@ public class Magpie2 {
 				|| statement.indexOf("sister") >= 0
 				|| statement.indexOf("brother") >= 0) {
 			response = "Tell me more about your family.";
+		} else if (statement.indexOf("Mr. Millstein") >= 0) {
+			response = "He sounds like a good teacher.";
+		} else if (statement.indexOf("dog") >= 0
+				|| statement.indexOf("cat") >= 0 
+				|| statement.indexOf("fish") >= 0) {
+			response = "Animals are cool.";
+		} else if (statement.indexOf ("") >= 0)
+				response = "Say something, please.";
 		} else {
 			response = getRandomResponse();
 		}
 		return response;
-	}
+	}}
 
 	/**
 	 * Pick a default response to use if nothing else fits.
@@ -36,7 +44,7 @@ public class Magpie2 {
 		int whichResponse = (int) (r * NUMBER_OF_RESPONSES);
 		String response = "";
 
-		if (whichResponse == 0) {
+		if (whichResponse == 0) {.getClass();
 			response = "Interesting, tell me more.";
 		} else if (whichResponse == 1) {
 			response = "Hmmm.";
@@ -48,4 +56,5 @@ public class Magpie2 {
 
 		return response;
 	}
-}
+	}}
+	

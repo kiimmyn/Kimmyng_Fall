@@ -104,7 +104,7 @@ public class Calculate {
 	}
 	
 	public static double round2 (double a){
-		double answer;
+		double answer=0;
 		double intnumber=(int)(a*100);
 		answer *=a;
 		return answer;
@@ -117,13 +117,14 @@ public class Calculate {
 		}
 		double answer= 1.0;
 		if (power == 0){
-			return(1);
+		{	
+			return answer;
 		}
 			for (int x=1; x<= power; x++){
 				answer *=base;
-		
+				
+				
 				}
-			}
 			
 			public static int factorial (int pos){
 				if (pos<0){
