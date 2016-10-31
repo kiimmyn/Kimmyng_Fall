@@ -55,11 +55,22 @@ public class Calculate {
 		return(wholenum +"/"+  denominator);
 	}
 
-	public static String toMixedNum(int a, int b){
-		String answer= ((a/b)/b);
-		return (answer);
-	}
+	public static String toMixedNum(int num, int den){
+		boolean check= Calculate.isDivisibleBy(num , den);
+		if(check==true) {
+		return num/den + "";
+		} else {
+		return num/den + "_" + num % den + "/" + den;}
+			
+		}
+		
 	
+	private static boolean isDivisibleBy(int a, int b) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+
 	public static String foil (int a, int b, int c, int d, String e) {
 		return (a*c + "x^2" + a*d + b*c+ "x" + b*d);
 		}
@@ -84,6 +95,7 @@ public class Calculate {
 	}else if (b>a){
 			return b;
 		}
+		return b;
 	}
 	
 	
@@ -101,11 +113,11 @@ public class Calculate {
 		}else if (b<a){
 			return b;
 		}
+		return b;
 	}
 	
 	public static double round2 (double a){
 		double answer=0;
-		double intnumber=(int)(a*100);
 		answer *=a;
 		return answer;
 	}
@@ -122,9 +134,10 @@ public class Calculate {
 		}
 			for (int x=1; x<= power; x++){
 				answer *=base;
-				
-				
-				}
+			}
+			return answer;
+			
+		}
 			
 			public static int factorial (int pos){
 				if (pos<0){
