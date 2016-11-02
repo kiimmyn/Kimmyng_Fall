@@ -30,6 +30,20 @@ public class Split {
 		String[] array2 = example2.split("really?");
 		System.out.print(Arrays.toString(array2));
 		
+		// task1:
+	    task1("applespineapplesbreadlettucestomatobaconmayohambreadcheese");
+	    task1("applesbreadtomatobreadcheese");
+	    task1("breadbreadbread");
+	    task1("breadbread");
+	    task1("bread");
+	    
+	    // task2:
+	    task1("apples pineapples bread lettuces tomato bacon mayo ham bread cheese");
+	    task1("apples bread tomato bread cheese");
+	    task1("breadbreadbread");
+	    task1("breadbread");
+	    task1("bread");
+		
 		//Your task:
 		/*Write a method that take in a string like "applespineapplesbreadlettustomatobaconmayohambreadcheese" describing a sandwich
 		 * use String.split to split up the sandwich by the word "bread" and return what's in the middle of the sandwich and ignores what's on the outside
@@ -61,5 +75,10 @@ public class Split {
 
 		
 
+	}
+
+	private static void task1(String string) {
+		// TODO Auto-generated method stub
+		
 	}
 }
