@@ -66,13 +66,31 @@ public class Split {
 				System.out.println(food[i]);
 			}
 		}
+		}
 		
 		//Your task pt 2:
 		/*Write a method that take in a string like "apples pineapples bread lettus tomato bacon mayo ham bread cheese" describing a sandwich
 		 * use String.split to split up the sandwich at the spaces, " ", and return what's in the middle of the sandwich and ignores what's on the outside
 		 * Again, what if it's a fancy sandwich with multiple pieces of bread?
 		*/
-
+		 public static void task2 (String sandwich){ 
+		        int bread1 = sandwich.indexOf("bread");
+		        int bread2 = sandwich.indexOf("bread", bread1 + 6);
+		        if(bread1 < 0 && bread1 >=0 && bread2 < 0){
+		            System.out.println("Not a sandwich");
+		        } else{
+		        	if (bread1+6 == bread2) {
+		        
+		            System.out.println("Not a sandwich");
+		        } else{
+		        if(bread1 == 0) {
+		        
+		            System.out.println("Not a sandwich");
+		        } else {
+		            System.out.println(sandwich.substring(bread1+6, bread2));
+		        }
+		        }}
+		
 		
 
 	}
