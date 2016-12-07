@@ -116,29 +116,36 @@ public class Calculate {
 		return b;
 	}
 	
-	public static double round2 (double a){
-		double answer=0;
-		answer *=a;
+	public static double round2 (double a) {
+		double intnumber= (int)(a*100);
+		double answer;
+		if ((100*a) - intnumber >= .5) {
+		answer= (int) (100*a+1);
+		answer /= 100;
 		return answer;
+	
+		}else{
+			answer= (int) (100*a);
+			answer /=100;
+			return answer;
+		
+		}
 	}
 	
+		
+	//part 3
 	
-	public static double exponent(int base, double power){
-		if (power<0){
-			throw new IllegalArgumentException("Power must be positive");
+	
+	public static double exponent1 (double b, int p) { 
+		if (p < 0) {
+			throw new IllegalArgumentException("negative exponent: " + p);
 		}
-		double answer= 1.0;
-		if (power == 0){
-		{	
-			return answer;
+		double answer = 1;
+		for (int i = 1; i <= p; i++) {
+			answer *= b;
 		}
-			for (int x=1; x<= power; x++){
-				answer *=base;
-			}
-			return answer;
-			
-		}
-			
+		return answer;
+	}
 			public static int factorial (int pos){
 				if (pos<0){
 						throw new IllegalArgumentException("Number for factorial must be positive.");
@@ -152,7 +159,7 @@ public class Calculate {
 				}
 				return answer;
 			}
-	}
+}
 	
 	
 

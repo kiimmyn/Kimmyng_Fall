@@ -1,0 +1,122 @@
+package fracCalc;
+
+import java.util.Scanner;
+
+public class FracCalc {
+
+    public static void main(String[] args) 
+    {
+        // TODO: Read the input from the user and call produceAnswer with an equation
+    	Scanner console = new Scanner(System.in);
+    	System.out.println("Enter your operation.");
+    	String input = console.nextLine();
+ 
+
+    	produceAnswer(input);
+    }
+    
+    // ** IMPORTANT ** DO NOT DELETE THIS FUNCTION.  This function will be used to test your code
+    // This function takes a String 'input' and produces the result
+    //
+    // input is a fraction string that needs to be evaluated.  For your program, this will be the user input.
+    //      e.g. input ==> "1/2 + 3/4"
+    //        
+    // The function should return the result of the fraction after it has been calculated
+    //      e.g. return ==> "1_1/4"
+    public static String produceAnswer(String input)
+    { 
+        // TODO: Implement this function to produce the solution to the input
+    	String OperandOne = new String();
+    	String OperandTwo = new String();
+    	String operator = new String(); 
+    	int spaceOne = input.indexOf(" ");
+    	int spaceTwo = input.indexOf(" ", spaceOne + 2);
+    	operator = input.substring(spaceOne+1, spaceTwo);
+    	OperandOne = input.substring(0, spaceOne);
+    	OperandTwo = input.substring(spaceTwo+1, input.length());
+    	
+        return parsing(OperandTwo);
+    }
+
+    // TODO: Fill in the space below with any helper methods that you think you will need
+    public static String parsing(String OperandTwo)
+    {
+    	String integer = "0";
+    	String num = "0";
+    	String den = "0";
+    	if (OperandTwo.indexOf("_")==-1) {
+		integer = "0";
+		num = OperandTwo.substring(0, OperandTwo.indexOf("/"));
+		den = OperandTwo.substring(OperandTwo.indexOf("/") + 1, OperandTwo.length());
+    	} else if (OperandTwo.indexOf("_")==-1 && OperandTwo.indexOf("/")==-1) {
+    		integer = OperandTwo;
+    		num = "0";
+    		den = "1";
+    	} else { 
+    		integer = OperandTwo.substring(0, OperandTwo.indexOf("_"));
+    		num = OperandTwo.substring(OperandTwo.indexOf("_") + 1, OperandTwo.indexOf("/")); 
+    		den = OperandTwo.substring(OperandTwo.indexOf("/") + 1, OperandTwo.length());
+    	}
+    	
+    	return ("whole:" + integer + " numerator:" + num + " denominator:" + den);
+    }
+    
+//converts mixed number into an improper fraction
+public static int[] toImproperFrac (int integer, int num, int den) {
+	int[] toImproperFrac = new int[2];
+	toImproperFrac[0] = integer * den + num;
+	toImproperFrac[1] = den;
+	return toImproperFrac;
+}
+
+public static int[] addFrac(int[] firstOp, int[] secondOp)
+{
+	int[] answer = new int[2];
+	if(firstOp[1] == secondOp[1]){
+		answer[0] = firstOp[0] + secondOp[0];
+		answer[1] = firstOp[1];
+	}else{
+		firstOp[0] = firstOp[0] * secondOp[1];
+		secondOp[0] = secondOp[0] * firstOp[1];
+		answer[0] = firstOp[0] + secondOp[0];
+		answer[1] = firstOp[1] * secondOp[1];
+	}
+	return answer;
+}
+
+public static int[] subtractFrac(int[] firstOp, int[] secondOp)
+{
+	secondOp[0]=secondOp[0]*-1;
+	return addFrac(firstOp, secondOp);
+}
+
+public static int[] multiplyFrac(int[] firstOp, int[] secondOp)
+{
+	int[] answer = new int[2];
+	answer[0]= firstOp[0]*secondOp[0];
+	answer[1] = firstOp[1]*secondOp[1];
+	return answer;
+}
+
+public static int[] divideFrac(int[] firstOp, int[] secondOp)
+{
+	int[] answer = new int[2];
+	answer[0]=secondOp[1];
+	answer[1]=secondOp[0];
+	return multiplyFrac(firstOp, answer);
+}
+
+public static String toMixedNum(int[] frac){
+	int Integer = frac[0] / frac[1];
+	int num = frac[0] % frac[1];
+	int den = frac[1];
+	if(num < 0){
+		num *= -1;
+	}
+	if(den < 0){
+		den *= -1;
+	}
+	return (Integer + "_" + num + "/" + den);
+}
+
+}
